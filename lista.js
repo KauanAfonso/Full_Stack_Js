@@ -33,3 +33,24 @@ if (totalDePalvras==0) {
 }
 
 console.log(`Essa nome tem ${totalDePalvras}  palavras`)
+
+
+const notas = [];
+let soma = 0;
+
+
+notas.push(5);
+notas.push(8);
+notas.push(10);
+notas.push(9);
+notas.push(4);
+
+console.log(notas)
+
+for(let i = 0; i < notas.length ; i++){
+    (soma += notas[i]) 
+}
+
+soma = soma / notas.length
+
+console.log(`Sua média é de: ${soma}`)
