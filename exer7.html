@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+let opcao = parseFloat(prompt(`Digite o que você deseja : /n 
+    1 - pizza /n
+    2 - hamburguer /n
+    3- sushi /n
+    4- sorvete /n
+    5 - encerrar`))
+
+do{
+    switch(opcao){
+        case 1:
+            alert("Pizza!!");
+            break;
+        case 2:
+            alert('hamburguer!!');
+            break;
+        case 3:
+            alert("sushi!!");
+            break
+        case 4:
+            alert('Sorvete!!');
+            break
+        case 5: 
+            alert("encerrar!!");
+            break
+    }
+
+        opcao = parseFloat(prompt(`Digite o que você deseja : /n 
+        1 - pizza /n
+        2 - hamburguer /n
+        3- sushi /n
+        4- sorvete /n
+        5 - encerrar`))
+    
+
+}while(opcao !== 5)
+    alert("Você finalizou!")
+
+
+</script>
+
+</body>
+</html>
