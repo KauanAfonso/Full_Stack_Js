@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Simular a fila de um consultório</h1>
+
+    <script>
+
+        let pacientes = ["Kauan", "Cris", "Luna"];
+        let menuInterativo = ""
+
+
+
+        do {
+
+            let posicao = "";
+            let numero = 0;
+
+            for (let i = 0; i < pacientes.length; i++) {
+                numero++
+                posicao += ` ${numero} - ${pacientes[i]}; `
+            }
+
+
+
+            menuInterativo = parseInt(prompt(
+                "Pacientes:\n" + posicao +
+                "\nEscolha uma ação:\n1 - Novo paciente\n2 - Consultar paciente\n3 - Sair"
+            ))
+
+
+            switch (menuInterativo) {
+
+
+                case 1:
+                    let adicionarPaciente = prompt("Adicione um novo paciente para a fila:")
+                    pacientes.push(adicionarPaciente)
+                    break;
+
+                case 2:
+                    let pacienteAtendido = pacientes.shift();
+                    alert(`o paciente removido da fila foi o ${pacienteAtendido}`)
+                    break;
+                default:
+                    alert(`Você escolheu sair!`)
+                    break
+            }
+
+
+        } while (menuInterativo !== 3);
+
+
+
+    </script>
+
+</body>
+
+</html>

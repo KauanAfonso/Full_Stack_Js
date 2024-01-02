@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Trabalahando com arryas</h1>
+
+    <script>
+
+        const arr = ["Frodo", "Sam", "Merry", "Pippin", "Gandalf", "Aragorn", "Legolas", "Gimli"]
+
+
+        //adicionar elementos 
+        //push adiciona elementos no final do array
+
+        arr.push("Kauan")
+        console.log(arr)
+
+        //unshift
+        //unshift adiciona elementos no inicio do array
+        arr.unshift("Cris")
+        console.log(arr)
+
+
+        /* pop 
+        pop remove o ultimo elemento  
+        */
+        let ultimoElemento = arr.pop()
+        console.log(arr)
+        console.log(ultimoElemento)
+
+
+        /*shift
+        shift remove o primeiro elemento do array
+        */
+
+        let primeiroElemnto = arr.shift()
+        console.log(arr)
+        console.log(primeiroElemnto)
+
+
+        //Includes pesquisa por um elemento
+
+        const inclui = arr.includes("Gendalf") //se tiver essa string no array retorna verdadeiro ou falso
+        console.log(inclui)
+
+
+        //indexOf
+        //pesquisa um elemento pelo seu indice, se for falso retorna -1
+
+        const indice = arr.indexOf("Genalf")
+        console.log(indice)
+
+
+        //Cortar e Concatenar 
+        //slice(cortar o array)
+        const hobbits = arr.slice(0, 4) //parametros(posicao incial , quantidade)
+        const outros = arr.slice(-4)//parametros(eespicificou que ira pegar do quarto elemento fo final do array para tras )
+
+        console.log(arr)
+        console.log(hobbits)
+        console.log(outros)
+
+
+        //concatenar
+        //concat
+
+        let sociedade = hobbits.concat(outros, "Luz do Mundo")
+        console.log(sociedade)
+
+
+        //Subistituição dos ELementos 
+        //splice
+        const elementosRemovidos = sociedade.splice(sociedade[0], 1, 'Luna') //paramteros(a partir de qual elemento subistituir, quantidade, o que será o substituto)
+        console.log(sociedade)
+        console.log(elementosRemovidos + " esse é o elemento removido");
+
+
+        //iterar(percorrer o array)
+        //for 
+        for (let i = 0; i < arr.length; i++) {
+            const elementoFor = arr[i]
+            console.log(elementoFor + "se encontra na posição " + i)
+        }
+
+
+
+
+        // ----------------- RESUMO -----------------------
+
+        // push(): Adiciona um elemento ao final do array.
+        // pop(): Remove o último elemento do array.
+        // shift(): Remove o primeiro elemento do array.
+        // unshift(): Adiciona um elemento no início do array.
+        // concat(): Combina dois ou mais arrays em um novo array.
+        // slice(): Retorna uma cópia de parte do array, com base nos índices especificados.
+        // splice(): Altera o conteúdo de um array, adicionando, removendo ou substituindo elementos.
+        // forEach(): Executa uma função para cada elemento do array.
+        // map(): Cria um novo array com os resultados da aplicação de uma função em cada elemento do array original.
+        // filter(): Cria um novo array com todos os elementos que passam por um teste especificado em uma função.
+        // reduce(): Reduz o array a um único valor, executando uma função para cada elemento.
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

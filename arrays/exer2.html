@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let baralho = ["Carta 1", "Carta 2", "Carta 3 ", "Carta 4"];
+        console.log(baralho.length)
+
+        let menuInterativo = 0
+
+        do {
+    
+        menuInterativo = parseInt(prompt(`Seu baralho possui ${baralho.length} cartas; 
+        Digite 1 para Adicionar uma carta;
+        Digite 2 para Puxar uma carta ;
+        Digite 3 para Sair;`))
+
+            switch (menuInterativo) {
+
+                case 1:
+                    let novaCarta = prompt('Digite a nova carta a ser adiciona :')
+                    baralho.push(novaCarta)
+                    break;
+
+                case 2:
+                    let cartaRetirada = baralho.pop();
+                    alert(`A carta retirada foi: ${cartaRetirada}`)
+                    break;
+
+                default:
+                    alert(`Você escolheu sair!!`);
+                    break;
+
+            }
+
+
+
+        } while (menuInterativo !== 3)
+
+        alert(`Seu baralho possui ${baralho.length} e as cartas são : 
+            ${baralho}`)
+
+    </script>
+
+</body>
+
+</html>
