@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="" id="incial">
+    <label for="estado">Sala</label>
+	<select id="estado" name="estado">
+		<option value="05">05</option>
+		<option value="06">06</option>
+		<option value="07">07</option>
+	</select><br>
+
+
+    <label for="numeroDeMesa">Quantas mesas tem sua sala? </label>
+    <input type="number" name="numeroDeMesa" id="numeroDeMesa"><br>
+
+    <input type="submit" id="btn">
+
+</form>
+
+
+<div id="div"></div>
+
+    
+
+<script>
+
+let formularioInicial = document.getElementById("incial")
+let div = document.getElementById('div')
+let i = 1;
+let a = 2;
+
+
+formularioInicial.addEventListener('submit' , (ev)=>{
+    ev.preventDefault()
+
+    let numeroDeMesa = document.getElementById('numeroDeMesa').value
+
+    while(i<=numeroDeMesa){
+
+    div.innerHTML += `<h2>Mesa ${i}</h2>
+        
+    <form action="">
+
+    <h3>Computador ${i}</h3>
+
+    <label for="'computador${i}'">Computador presente? </label>
+	<input type="radio" name='computador${i}' value="sim" checked>
+    <label for="'computador${i}'">Sim</label>
+    <input type="radio" name='computador${i}' value="não">
+    <label for='computador${i}'>Não</label>
+    <br>
+
+    
+    <h3>Computador ${a}</h3>
+
+    <label for='computador${a}'>Computador presente? </label>
+	<input type="radio" name="computador${a}" value="sim" checked>
+    <label for="computador${a}">Sim</label>
+    <input type="radio" name="computador${a}" value="não">
+    <label for="computador${a}">Não</label>
+    <br>
+     
+        
+        `
+        i++
+        a++
+
+    }
+
+
+})
+
+</script>
+</body>
+</html>

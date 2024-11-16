@@ -35,10 +35,16 @@ for (let i = 0; i <=20; i++) {
 
 let numero = parseFloat(prompt('DIgite um numero para tabuada : '));
 
-for (let i = 0; i <=20; i++) {
+
+
+for (let i = 0; i <11; i++) {
     
-    alert(`${numero} x ${i} = ${numero*i}`)
-    
+    console.log(`${numero} x ${i} = ${numero*i}`)
+
+    if(i === 10 && numero !== 10){
+    i = 0
+    numero +=1;
+    }
 }
 
 </script>
