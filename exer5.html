@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -51,4 +52,59 @@ alert(`seu valor convertido é ${total}`)
 </script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    let valor = parseFloat(prompt('Digite um valor em metros:'))
+    let unidadeMedida = parseFloat(prompt(`Qual unidade de medidada será convertido valor: /n 
+        Digite: /n
+        1 para milimetro /n
+        2 para centimetro /n
+        3 para decimetro /n 
+        4 para decametro /n 
+        5 para hectometro /n
+        6 para quilometro `
+    ));
+
+let total = 0;
+
+switch(unidadeMedida){
+    case (1):
+        total = valor*1000
+        break
+    case (2):
+        total = valor*100;
+        break;
+    case(3):
+        total = valor*10;
+        break;
+    case(4):
+        total = valor/10;
+        break;
+    case(5):
+        total = valor/100;
+        break;
+    case(6):
+        total = valor/1000;
+        break;
+    default:
+        alert('opcão inválida');
+        break
+}
+
+alert(`seu valor convertido é ${total}`)
+
+
+</script>
+
+</body>
+>>>>>>> e0d76af (Novo commit antes do push)
 </html>

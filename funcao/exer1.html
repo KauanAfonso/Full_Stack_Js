@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,4 +94,101 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function areaTriangulo(base, altura) {
+            return base * altura / 2
+        }
+
+        function areaRetangulo(base, altura) {
+            return base * altura
+        }
+
+        function areaQuadrado(lado) {
+            return lado * lado
+        }
+
+        function areaTrapezio(baseMaior, baseMenor, altura) {
+            return (baseMaior + baseMenor) * altura / 2
+        }
+
+        function areaCirculo(raio, pi = 3.14) {
+            return (raio * raio) * pi
+        }
+
+        let menu = ""
+        let base = 0;
+        let altura = 0;
+        let lado = 0;
+        let baseMaior = 0;
+        let baseMenor = 0;
+        let raio = 0;
+
+        do {
+
+            menu = parseInt(prompt("Digite 1 para calcular a area do triangulo\n Digite 2 Para calcular a area do retangulo\n Digite 3 para calcular a area do quadrado\n Digite 4 para calcular a area do trapezio\n Digite 5 para calcular a area do circulo\n Digite 6 para sair!"))
+
+            switch (menu) {
+
+                case 1:
+
+                    base = parseFloat(prompt('Digite a base :'))
+                    altura = parseFloat(prompt("Digite a altura:"))
+                    alert(`A area do tringulo é de ${areaTriangulo(base, altura)}`)
+                    break
+
+                case 2:
+
+                    base = parseFloat(prompt('Digite a base :'))
+                    altura = parseFloat(prompt("Digite a altura:"))
+                    alert(`A area do retangulo é de ${areaRetangulo(base, altura)}`)
+                    break
+
+                case 3:
+
+                    lado = parseFloat(prompt("Digite o lado:"))
+                    alert(`A area do quadrado é de ${areaQuadrado(lado)}`);
+                    break
+
+                case 4:
+
+                    baseMaior = parseFloat(prompt("Digite A Base maior:"))
+                    baseMenor = parseFloat(prompt("Digite A Base menor:"))
+                    altura = parseFloat(prompt("Digite a altura:"));
+
+                    alert(`A area do trapezio é de ${areaTrapezio(baseMaior, baseMenor, altura)}`);
+                    break
+
+                case 5:
+
+                    raio = parseFloat(prompt("Digite O Raio:"))
+                    alert(`A area do circulo é de ${areaCirculo(raio)}`);
+                    break
+
+                default:
+                    alert('Você escolheu sair')
+                    break
+            }
+
+
+        } while (menu !== 6)
+
+
+    </script>
+
+</body>
+
+>>>>>>> e0d76af (Novo commit antes do push)
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -45,4 +46,53 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let quantidadeDeDinheiro = parseFloat(prompt("Digite a quantidade de dinehiro : "));
+
+        do {
+
+        opcao = parseFloat(prompt(
+        `Seu saldo é de R$${quantidadeDeDinheiro}  
+        Digite:  
+        1- Para Adicionar dinheiro 
+        2- Para remover dinheiro 
+        3- para sair`))
+
+            if (opcao === 1) {
+                let novoValor = parseFloat(prompt("Digite o valor adicional:"))
+                quantidadeDeDinheiro += novoValor;
+            } else if (opcao === 2) {
+                novoValor = parseFloat(prompt("Digite o valor para sacar:"))
+                if(novoValor > quantidadeDeDinheiro){
+                    alert("Não possui saldo suficiente.")
+                }else{
+                    quantidadeDeDinheiro -= novoValor;}
+            } else {
+                alert("Você escolheu sair!")
+            }
+
+
+
+        } while (opcao !== 3)
+
+        alert(`seu valor na conta é de ${quantidadeDeDinheiro}`)
+
+    </script>
+
+</body>
+
+>>>>>>> e0d76af (Novo commit antes do push)
 </html>
