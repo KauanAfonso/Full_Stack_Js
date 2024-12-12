@@ -17,5 +17,5 @@ function switchThme(){
 
 document.getElementById('lightBtn').addEventListener('click' , userLightTheme)
 document.getElementById('darkBtn').addEventListener('click' , userDarkTheme)
->>>>>>> baec299 (Envios de exercícios)
+
 document.getElementById('switchBtn').addEventListener('click' , switchThme)

@@ -29,5 +29,5 @@ document.getElementById('disable').addEventListener('click' , function(){
 document.getElementById('data').addEventListener('click' , function(){
     const data = input.dataset.something
     console.log(data)
->>>>>>> baec299 (Envios de exercícios)
+
 })

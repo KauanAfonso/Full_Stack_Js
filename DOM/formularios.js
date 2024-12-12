@@ -33,5 +33,5 @@ form.addEventListener('submit' , function(ev){
       div = document.getElementById('div')
 
       div.append(name, " ", address, breadType, main, observations)
->>>>>>> baec299 (Envios de exercícios)
+
 })

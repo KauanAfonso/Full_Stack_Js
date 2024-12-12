@@ -148,4 +148,4 @@ btnEnviarCadastro.addEventListener('click' , function(){
 })
 
 
->>>>>>> baec299 (Envios de exercícios)
+

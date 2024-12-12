@@ -14,5 +14,5 @@ function register(element){
         element.appendChild(paragrafo)
 
     }
->>>>>>> baec299 (Envios de exercícios)
+
 }

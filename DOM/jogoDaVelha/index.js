@@ -141,4 +141,4 @@ posicao9.addEventListener('click', function () {
 
 
 
->>>>>>> baec299 (Envios de exercícios)
+

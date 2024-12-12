@@ -85,5 +85,5 @@ addTechBtn.addEventListener('click', function (ev) {
     })
   
     console.log(developers)
->>>>>>> baec299 (Envios de exercícios)
+
   })

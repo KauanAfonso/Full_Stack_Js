@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
-=======
-
 
 
 function addInput(){
@@ -104,4 +102,4 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
->>>>>>> baec299 (Envios de exercícios)
+

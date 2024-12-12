@@ -56,4 +56,4 @@ function removeContact(){
     contactSection.removeChild(contacts[contacts.length - 1])
 }
 
->>>>>>> baec299 (Envios de exercícios)
+

@@ -31,5 +31,5 @@ function removePlayer(){
        playerToRemove.remove()
         document.getElementById('numbeRemove').value = ''
     }
->>>>>>> baec299 (Envios de exercícios)
+
 }

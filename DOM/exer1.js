@@ -113,5 +113,5 @@ function removerJogador() {
 
 
 escalarJogador();
->>>>>>> baec299 (Envios de exercícios)
+
 removerJogdor();

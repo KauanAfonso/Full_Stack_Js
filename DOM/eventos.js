@@ -26,5 +26,5 @@ function removeEvent(){
 
 button.addEventListener('mouseover' , function(ev){
     console.log(ev.currentTarget)
->>>>>>> baec299 (Envios de exercícios)
+
 })

@@ -22,5 +22,5 @@ function show(){
 
     //obter um unico elemento com query
     const firstContact = document.querySelector("#contact-list > li > label")
->>>>>>> baec299 (Envios de exercícios)
+
 }
