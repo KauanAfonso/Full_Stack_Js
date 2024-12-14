@@ -1,0 +1,14 @@
+{
+    "nome":"Kauan",
+    "Profissão":"Desenvolvedor de sistemas",
+    "idade": 18,
+    "trabalhando": true,
+    "tecnologias": ["JS", "PHP", "PYTHON"],
+    "localidade": {
+        "cidade":"Hortolândia",
+        "bairro":"Remanso"
+    }
+    
+
+
+}
