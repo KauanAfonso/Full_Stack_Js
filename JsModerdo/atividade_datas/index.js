@@ -6,33 +6,55 @@ let dayjs = require('dayjs')
 
 */
 
-data_aniversario = dayjs("2006-12-28")
-let agora = dayjs()
 
+const formatar_data = (data) =>{
+    // Verifica se a data está no formato esperado (DD-MM-YYYY)
+    const partes = data.split('-');
+    console.log(partes)
 
-let idade = agora.diff(data_aniversario, 'year');
+    if (partes.length !== 3) {
+        console.log('Data inválida!');
+        return;
+    }
 
-console.log(`Você tem ${idade} anos.`)
+    // Desestrutura as partes da data
+    const [dia, mes, ano] = partes;
 
+    // Formata a data para o formato YYYY-MM-DD
+    const dataFormatada = `${ano}-${mes}-${dia}`;
 
-proximo_aniversario = data_aniversario.year(agora.year())
-
-if(proximo_aniversario.isBefore(agora)){
-
-    proximo_aniversario = data_aniversario.add(idade+1, "Year")
-    console.log(`Seu aniversário ja foi esse ano, então o proximo aniversário será em: ${proximo_aniversario.format('DD-MM-YYYY')}`)
-
-}else{
-    console.log("Seu aniversário será ainda esse ano !!!")
-    console.log(`Seu proximo aniversário será em: ${proximo_aniversario.format('DD-MM-YYYY')}`)
+    return dataFormatada;
 }
 
 
-console.log(proximo_aniversario.diff(agora, 'd'))
+const exer_datas = (data) =>{
+ 
+    data_formatada = formatar_data(data)
+
+    let data_aniversario = dayjs(data_formatada)
+
+    let agora = dayjs()
+
+    let idade = agora.diff(data_aniversario, 'year');
+
+    console.log(`Você tem ${idade} anos.`)
 
 
+    proximo_aniversario = data_aniversario.year(agora.year())
+
+    if(proximo_aniversario.isBefore(agora)){
+
+        proximo_aniversario = data_aniversario.add(idade+1, "Year")
+        console.log(`Seu aniversário ja foi esse ano, então o proximo aniversário será em: ${proximo_aniversario.format('DD-MM-YYYY')}`)
+
+    }else{
+        console.log("Seu aniversário será ainda esse ano !!!")
+        console.log(`Seu proximo aniversário será em: ${proximo_aniversario.format('DD-MM-YYYY')}`)
+    }
 
 
-// const idade(idade){
-//     data_aniversario = dayjs(data)
-// }
+    console.log(proximo_aniversario.diff(agora, 'd'))
+
+}
+
+exer_datas('28-09-2006')
