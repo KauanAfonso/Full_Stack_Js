@@ -1,28 +1,35 @@
 let dayjs = require('dayjs')
 
+/*
 
-data = dayjs("12-25-2001").format("DD-MM-YYYY");
+ o método .diff() não retorna um objeto dayjs, ele retorna a diferença numérica entre as duas datas (número de anos, meses, dias, etc.). Ou seja, você não pode usar .format() diretamente no valor retornado por .diff().
 
-console.log(data);
+*/
 
-
-
-// dia_de_hoje = dayjs().date() 
-// console.log(dia_de_hoje)
-
-
-// dayjs().format()
-// console.log(dayjs().year())
+data_aniversario = dayjs("2006-09-28")
+let agora = dayjs()
 
 
-// const quantos_dias_aniversario = (data) =>{
-//     const data_de_aniversario = dayjs(data).locale('pt-br').format();
-//     console.log(data_de_aniversario)
+let idade = agora.diff(data_aniversario, 'year');
 
-//     ano_atual = dayjs().year()
-//     mes_atual = dayjs().month()
-//     dia_atual = dayjs().date()
-    
+console.log(`Você tem ${idade} anos.`)
+
+
+teste = data_aniversario.year(agora.year())
+
+if(teste.isBefore(agora)){
+
+    teste = data_aniversario.add(idade+1, "Year")
+    console.log(`Seu aniversário ja foi esse ano, então o proximo aniversário será em: ${teste.format('DD-MM-YYYY')}`)
+
+}else{
+    console.log("Seu aniversário será ainda esse ano !!!")
+    console.log(`Seu proximo aniversário será em: ${teste.format('DD-MM-YYYY')}`)
+}
+
+
+
+
+// const idade(idade){
+//     data_aniversario = dayjs(data)
 // }
-
-// quantos_dias_aniversario('28-09-2006')
