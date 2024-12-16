@@ -6,7 +6,7 @@ let dayjs = require('dayjs')
 
 */
 
-data_aniversario = dayjs("2006-09-28")
+data_aniversario = dayjs("2006-12-28")
 let agora = dayjs()
 
 
@@ -15,17 +15,20 @@ let idade = agora.diff(data_aniversario, 'year');
 console.log(`Você tem ${idade} anos.`)
 
 
-teste = data_aniversario.year(agora.year())
+proximo_aniversario = data_aniversario.year(agora.year())
 
-if(teste.isBefore(agora)){
+if(proximo_aniversario.isBefore(agora)){
 
-    teste = data_aniversario.add(idade+1, "Year")
-    console.log(`Seu aniversário ja foi esse ano, então o proximo aniversário será em: ${teste.format('DD-MM-YYYY')}`)
+    proximo_aniversario = data_aniversario.add(idade+1, "Year")
+    console.log(`Seu aniversário ja foi esse ano, então o proximo aniversário será em: ${proximo_aniversario.format('DD-MM-YYYY')}`)
 
 }else{
     console.log("Seu aniversário será ainda esse ano !!!")
-    console.log(`Seu proximo aniversário será em: ${teste.format('DD-MM-YYYY')}`)
+    console.log(`Seu proximo aniversário será em: ${proximo_aniversario.format('DD-MM-YYYY')}`)
 }
+
+
+console.log(proximo_aniversario.diff(agora, 'd'))
 
 
 
