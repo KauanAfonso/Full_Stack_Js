@@ -1,7 +1,6 @@
 {
   "name": "webpack",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^5.97.1",
+    "webpack": "file:",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "dayjs": "^1.11.13"
-  }
+  },
+  "description": ""
 }
