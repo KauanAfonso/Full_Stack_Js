@@ -1,5 +1,9 @@
 const path = require('path'); // Módulo para trabalhar com caminhos
 
+const miniCssExtracPlgin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+
 module.exports = {
     entry: {
         main: './index.js'// Definindo o ponto de entrada
@@ -8,9 +12,12 @@ module.exports = {
     module:{
         rules:[{
             test: /\.css$/,
-            use: ['style-loader' , 'css-loader']
+            use: [MiniCssExtractPlugin.loader , 'css-loader']
         }]
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin()
+    ]
 };
 
 
