@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ 
+    <script>
+   
+    $(document).ready(function(){
+        $('#disciplinaNutri').hide();
+        $("#lbdisciplinaNutri").hide();
+        $('#disciplinaInf').hide();
+        $('#lbdisciplinaInf').hide();
+        $('#lbdisciplinaADM').hide();
+        $('#disciplinaADM').hide();
+        $('#curso').change(function(){
+            if ($(this).val() == 2){
+                //Quando o valor 2 estiver ativo, esconder a legenda e disciplina de valores 2 e 3;
+
+                //ativando valor 2
+                $('#lbdisciplinaADM').show();
+                $('#disciplinaADM').show();
+                $('#lbdisciplinaADM').prop('required' , 'required');
+
+                //escondendo valores 1 e 2
+                $('#lbdisciplinaInf').hide();
+                $('#disciplinaInf').hide();
+                $('lbdisciplinaInf').prop('required' , 'required');
+
+                $('#lbdisciplinaNutri').hide();
+                $('#disciplinaNutri').hide();
+                $('lbdisciplinaNutri').prop('required' , '');
+
+            }else if($(this).val() == 1){
+
+                //Quando o valor 1 estiver ativo, esconder a legenda e disciplina de valores 2 e 3;
+                $('#lbdisciplinaInf').show();
+                $('#disciplinaInf').show();
+                $('#lbdisciplinaInf').prop('required' , 'required');
+                
+                //escondendo valores 2 e 3
+                $('#lbdisciplinaADM').hide();
+                $('#disciplinaADM').hide();
+                $('lbdisciplinaADM').prop('required' , 'required');
+
+                $('#lbdisciplinaNutri').hide();
+                $('#disciplinaNutri').hide();
+                $('lbdisciplinaNutri').prop('required' , '');
+
+
+            }else if($(this).val() == 3){
+                //Quando o valor 3 estiver ativo, esconder a legenda e disciplina de valores 1 e 2;
+
+                //ativando valor 3
+                $('#lbdisciplinaNutri').show();
+                $('#disciplinaNutri').show();
+                $('#lbdisciplinaNutri').prop('required' , 'required');
+
+                //escondendo valoress 1 e 2
+                $('#lbdisciplinaInf').hide();
+                $('#disciplinaInf').hide();
+                $('#lbdisciplinaInf').prop('required' , '');
+
+                $('#lbdisciplinaADM').hide();
+                $('#disciplinaADM').hide();
+                $('#lbdisciplinaADM').prop('required' , '');
+            }
+        });
+    });
+</script>
+ 
+<body>
+   
+<form action="">
+    <label for="curso">Selecione um curso</label>
+    <select name="curso" id="curso">
+        <option value="">Selecione</option>
+        <option value="1">Informatica</option>
+        <option value="2">Administração</option>
+        <option value="3">nutrição</option>
+    </select><br><br>
+ 
+    <label for="disciplinaADM" id="lbdisciplinaADM">Selecione a disciplina</label>
+    <select name="disciplinaADM" id="disciplinaADM">
+        <option value="">selecione</option>
+        <option value="1">PTCC</option>
+        <option value="2">Marketin</option>
+        <option value="3">Contabilidade</option>
+    </select>
+
+    <label for="disciplinaInf" id="lbdisciplinaInf">Selecione a disciplina</label>
+    <select name="disciplinaInf" id="disciplinaInf">
+        <option value="">selecione</option>
+        <option value="1">Programação A</option>
+        <option value="2">Programação B</option>
+        <option value="3">Programação C</option>
+    </select>
+
+    <label for="disciplinaNutri" id="lbdisciplinaNutri">Selecione a disciplina</label>
+    <select name="disciplinaNutri" id="disciplinaNutri">
+        <option value="">selecione</option>
+        <option value="1">Arroz A</option>
+        <option value="2">Feijão B</option>
+        <option value="3">Pamonha C</option>
+    </select>
+
+</form>
+ 
+</body>
+</html>
