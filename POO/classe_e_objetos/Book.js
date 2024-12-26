@@ -15,4 +15,4 @@ const eragon = new Book("Eragon")
 eragon.published()
 
 console.log(eragon)
-console.log(eragon instanceof)
+console.log(eragon instanceof Array)
