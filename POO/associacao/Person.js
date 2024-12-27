@@ -1,7 +1,7 @@
 class Person{
-    constructor(name,adress){
+    constructor(name,street,number,neighborhood,city,state){
         this.name = name
-        this.adress = adress
+        this.adress = new Address(street,number,neighborhood,city,state) 
     }
 }
 
