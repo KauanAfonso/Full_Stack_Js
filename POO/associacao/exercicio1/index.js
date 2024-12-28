@@ -10,5 +10,5 @@ let kauan_comement = new Comment("Crisnelly" , "Uma incrível partida de memphis
 post_kauan.add_comment(kauan_comement)
 let post1 = kauan.create_post(post_kauan)
 
-console.log(post1)
+console.log(kauan)
 
