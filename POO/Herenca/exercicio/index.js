@@ -64,10 +64,22 @@ class Label extends Component{
     
 }
 
-// class form extends Component{
-//     constructor()
-// }
+class Form extends Component{
+    constructor(area){
+        super("form", area)
+    }
 
+    addChildren(...children){
+        children.forEach((child) =>{
+            this.getElement().appendChild(child.getElement())
+        })
+    }
+    
+}
+
+
+let div = new Component("div" , 'area', 'div_teste')
+div.render()
 
 let new_label = new Label("input-01", "Isso é um teste: ", "label01", 'area')
 new_label.render()
