@@ -1,4 +1,4 @@
-class Character{
+export class Character{
     constructor(nome, vida, ataque, defesa){
         this.nome = nome 
         this.vida = vida 
