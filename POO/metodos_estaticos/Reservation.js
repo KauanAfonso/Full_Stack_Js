@@ -12,3 +12,7 @@ class Reservation{
         console.log(`base fee is ${Reservation.baseFee} `)
     }
 }
+
+Reservation.showBase()
+const r1 = new Reservation(3, "201" , 5 )
+console.log(r1)
