@@ -1,6 +1,6 @@
 import { Character } from "./Character";
 
-class Magier extends Character{
+export class Magier extends Character{
     constructor(nome, vida, ataque, defesa, magia){
         super(nome,vida,ataque,defesa)
         this.magia = magia

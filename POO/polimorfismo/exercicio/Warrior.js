@@ -1,6 +1,6 @@
 import { Character } from "./Character";
 
-class Warrior extends Character{
+export class Warrior extends Character{
     constructor(nome, vida, ataque, defesa, escudo, posicao){
         super(nome, vida, ataque, defesa)
 
