@@ -8,3 +8,6 @@ class Wallet {
         return this.#amount / 100
     }
 }
+
+const myWallet = new Wallet()
+console.log(myWallet.amount)
