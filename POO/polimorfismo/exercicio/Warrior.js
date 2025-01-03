@@ -5,7 +5,7 @@ class Warrior extends Character{
         super(nome, vida, ataque, defesa)
 
         this.escudo = escudo
-        this.posicao = "Defense"
+        this.posicao = posicao
     }
 
     change_position(){
