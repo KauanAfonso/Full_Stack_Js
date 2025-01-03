@@ -20,3 +20,6 @@ class Wallet {
 
 const myWallet = new Wallet()
 console.log(myWallet.amount)
+
+myWallet.username = "Kauan Afonso"
+console.log(myWallet.username)
