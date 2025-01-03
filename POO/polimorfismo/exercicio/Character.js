@@ -1,4 +1,4 @@
-export class Character{
+class Character{
     constructor(nome, vida, ataque, defesa){
         this.nome = nome 
         this.vida = vida 
@@ -19,9 +19,6 @@ export class Character{
     }
 }
 
+module.exports = Character
 
-let kauan = new Character("Kauan", 200, 100, 100)
-let cris = new Character('Cris', 400 , 100, 20)
 
-kauan.attack(cris)
-console.log(cris.return_life())

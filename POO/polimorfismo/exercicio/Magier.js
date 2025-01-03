@@ -1,6 +1,6 @@
-import { Character } from "./Character";
+const Character = require('./Character')
 
-export class Magier extends Character{
+class Magier extends Character{
     constructor(nome, vida, ataque, defesa, magia){
         super(nome,vida,ataque,defesa)
         this.magia = magia
@@ -22,3 +22,5 @@ export class Magier extends Character{
         }
     }
 }
+
+module.exports = Magier
