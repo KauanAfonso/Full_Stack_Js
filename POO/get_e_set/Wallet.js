@@ -12,6 +12,10 @@ class Wallet {
     set username(newUsername){
         this.#username = newUsername
     }
+
+    get username(){
+        return this.#username
+    }
 }
 
 const myWallet = new Wallet()
