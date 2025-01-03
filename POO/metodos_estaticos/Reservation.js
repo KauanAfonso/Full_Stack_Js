@@ -22,4 +22,6 @@ class Reservation{
 Reservation.showBase()
 const r1 = new Reservation(3, "201" , 5 )
 console.log(r1)
-console.log(`Premiumm is $${Reservation.premiumFee` )
+console.log(`Premiumm is $${Reservation.premiumFee}` )
+Reservation.baseFee = 250
+console.log(`Premiumm now is $${Reservation.premiumFee}` )
