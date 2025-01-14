@@ -1,4 +1,4 @@
-class Account{
+module.exports = class Account{
     #saldo
     constructor(user){
         this.user = user
