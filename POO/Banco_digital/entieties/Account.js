@@ -22,5 +22,11 @@ class Account{
         this.empréstimos_totais.push(emprestimo)
     }
 
-    trasnferencias_conta(trasnferencias)
+    trasnferencias_conta(trasnferencias){
+        if(trasnferencias.usuario_que_recebeu === this.user){
+            this.#saldo += trasnferencias.valor
+        }else{
+            this.#saldo -= trasnferencias.valor
+        }
+    }
 }
