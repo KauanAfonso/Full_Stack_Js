@@ -28,5 +28,7 @@ class Account{
         }else{
             this.#saldo -= trasnferencias.valor
         }
+
+        this.transferencias_totais.push(trasnferencias)
     }
 }
