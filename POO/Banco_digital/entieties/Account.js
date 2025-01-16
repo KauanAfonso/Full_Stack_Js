@@ -13,7 +13,7 @@ module.exports = class Account{
     }
 
     depositar_conta(deposito){
-            this.#saldo += deposito
+            this.#saldo += deposito.valor
             this.depositos_totais.push(deposito)
     }
 
