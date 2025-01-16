@@ -14,7 +14,8 @@ class App{
             return `Usuário já existente`
         }else{
             let usuario = new User(nome_completo, email,conta)
-            App.#usuarios.push(usuario)
+            return App.#usuarios.push(usuario)
+
         }
 
 
