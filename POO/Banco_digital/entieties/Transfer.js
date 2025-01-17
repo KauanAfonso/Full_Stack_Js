@@ -1,10 +1,10 @@
 import { User } from "./User";
 
 module.exports = class Transfer{
-    constructor(usuário_que_enviou_transferencia, usuário_que_recebeu_transferencia,valor,data){
+    constructor(usuário_que_enviou_transferencia, usuário_que_recebeu_transferencia,valor){
         this.usuário_que_enviou_transferencia = usuário_que_enviou_transferencia
         this.usuário_que_recebeu_transferencia = usuário_que_recebeu_transferencia
         this.valor = valor
-        this.data = data
+        this.data = new Date()
     }
 }

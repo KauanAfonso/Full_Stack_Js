@@ -1,12 +1,16 @@
+const Installment = require("./Installment")
+
 module.exports = class Loan{
   
     static #juros = 10
 
-    constructor(valor, data, quantidade_parcelas){
+    constructor(valor, Installment){
         this.valor = valor
-        this.data = data
-        this.quantidade_parcelas = quantidade_parcelas
-
+        this.installments = []
+        this.data = new Date()
+        for (let i = 1; i <= installments; i++) {
+            this.installments.push(new Installment((value * Loan.#juros) / installments, i))
+          }
     }
 
     static get verificar_juros(){
@@ -15,7 +19,7 @@ module.exports = class Loan{
 
     static set definir_juros(porcentagem){
 
-        aumento = (Loan.#juros * porcentagem) / 100
+        let aumento = (Loan.#juros * porcentagem) / 100
         return Loan.#juros += aumento
     }
 
