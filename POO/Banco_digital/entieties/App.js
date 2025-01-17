@@ -13,7 +13,7 @@ class App{
     }
 
     static criar_usuario(nome_completo, email, conta){
-        const usuário_existe = this.verificar_user_existente(email)
+        const usuário_existe = App.verificar_user_existente(email)
         if(usuário_existe){
             return `Usuário já existente`
         }else{
@@ -23,7 +23,7 @@ class App{
     }
 
     static depositar(email, valor){
-        let usuario = this.verificar_user_existente(email)
+        let usuario = App.verificar_user_existente(email)
         if(usuario){
             let depositar = new Deposit(valor)
             usuario.depositar_conta(depositar)
@@ -31,15 +31,24 @@ class App{
 
     }
 
-    static transferencia(conta, usuário_que_enviou_transferencia, usuário_que_recebeu_transferencia,valor){
-        let usuario = new Account(conta)
-        let transferencia = new Transfer(usuário_que_enviou_transferencia, usuário_que_recebeu_transferencia,valor)
-        usuario.trasnferencias_conta(transferencia)
+    static transfererir(conta, usuário_que_enviou_transferencia, usuário_que_recebeu_transferencia,valor){
+        let usuario1 = App.verificar_user_existente(usuário_que_enviou_transferencia)
+        let usuario2 = App.verificar_user_existente(usuário_que_recebeu_transferencia)
+
+        if(usuario1 && usuario2){
+            let transferencia = new Transfer(usuário_que_enviou_transferencia, usuário_que_recebeu_transferencia,valor)
+            usuario1.Account.trasnferencias_conta(transferencia)
+            usuario2.Account.trasnferencias_conta(transferencia)
+        }
     }
 
-    static emprestimo(valor, valor_parcela, numero_parcelas,status){
-        let parcela = new Installment(valor_parcela,numero_parcelas,status)
-        let emprest = new Loan(valor, parcela.numero_parcelas)
+    static emprestar(valor, email, numero_parcelas){
+        const usuario =  App.verificar_user_existente(email)
+        if(email){
+            let emprestimo = new Loan(valor, parcela.numero_parcelas)
+            usuario.Account.emprestimo_conta(emprestimo)
+        }
+      
     }
 
     static alterar_taxa_emprestimo(porcentagem){
