@@ -16,7 +16,7 @@ module.exports = class APP{
         return APP.#usuarios.filter((user) => user.email === email )
     }
 
-    static criar_usuario(nome_completo, email, conta){
+    static criar_usuario(nome_completo, email){
         const usuário_existe = APP.verificar_user_existente(email)
         if(usuário_existe){
             return `Usuário já existente`
