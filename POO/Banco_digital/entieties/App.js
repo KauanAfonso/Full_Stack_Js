@@ -4,7 +4,7 @@ const Installment = require("./Installment")
 const Loan = require("./Loan")
 const User = require("./User")
 
-class App{
+module.exports = class App{
  
     static #usuarios = []
 
