@@ -5,8 +5,12 @@ const Loan = require("./Loan")
 const User = require("./User")
 
 module.exports = class App{
- 
-    static #usuarios = []
+
+    static #usuarios 
+    constructor(){
+        App.#usuarios = []
+    }
+
 
     static verificar_user_existente(email){
         return App.#usuarios.filter((user) => user.email === email )
@@ -18,7 +22,7 @@ module.exports = class App{
             return `Usuário já existente`
         }else{
             let usuario = new User(nome_completo, email,conta)
-            return App.#usuarios.push(usuario)
+            App.#usuarios.push(usuario)
         }
     }
 
@@ -56,3 +60,5 @@ module.exports = class App{
     }
     
 }
+
+
