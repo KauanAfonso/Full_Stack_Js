@@ -5,3 +5,6 @@ kauan.criar_usuario("Kauan Afonso", "kauanafon3@gmail.com");
 console.log(kauan.verificar_user_existente("kauanafon3@gmail.com"))
 
 console.log(kauan.depositar("kauanafon3@gmail.com", 5000))
+
+
+//Os emprestimos

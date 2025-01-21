@@ -15,7 +15,11 @@ module.exports = class Account{
     depositar_conta(deposito){
             this.#saldo += deposito.valor
             this.depositos_totais.push(deposito)
+            console.log(this.depositos_totais)
+            
     }
+
+
 
     emprestimo_conta(emprestimo){
         this.#saldo += emprestimo
