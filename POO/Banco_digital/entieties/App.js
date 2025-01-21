@@ -15,7 +15,7 @@ module.exports = class APP {
         if (usuario_existe) {
             return `Usuário já existente`;
         } else {
-            const conta = new Account();
+            const conta = new Account(email);
             const usuario = new User(nome_completo, email, conta);
             APP.#usuarios.push(usuario);
             return `Usuário criado com sucesso`;
@@ -25,8 +25,9 @@ module.exports = class APP {
     static depositar(email, valor) {
         const usuario = APP.verificar_user_existente(email);
         if (usuario) {
+            const conta = new Account(usuario);
             const deposito = new Deposit(valor);
-            usuario.Account.depositar(deposito);
+            conta.depositar_conta(deposito);
             return `Depósito de ${valor} realizado com sucesso`;
         }
         return `Usuário não encontrado`;
