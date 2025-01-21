@@ -4,7 +4,7 @@ module.exports = class Account{
         this.user = user
         this.#saldo = 0
         this.depositos_totais = []
-        this.empréstimos_totais = []
+        this.emprestimos_totais = []
         this.transferencias_totais = []
     }
 
@@ -23,7 +23,8 @@ module.exports = class Account{
 
     emprestimo_conta(emprestimo){
         this.#saldo += emprestimo
-        this.empréstimos_totais.push(emprestimo)
+        this.emprestimos_totais.push(emprestimo)
+        console.log(this.emprestimos_totais)
     }
 
     trasnferencias_conta(trasnferencias){
@@ -34,5 +35,6 @@ module.exports = class Account{
         }
 
         this.transferencias_totais.push(trasnferencias)
+        console.log(this.transferencias_totais)
     }
 }
