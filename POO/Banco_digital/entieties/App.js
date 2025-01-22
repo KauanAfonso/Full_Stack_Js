@@ -2,6 +2,7 @@ const Account = require("./Account");
 const Deposit = require("./Deposit");
 const Loan = require("./Loan");
 const User = require("./User");
+const Transfer = require("./Transfer")
 
 module.exports = class APP {
     static #usuarios = [];
@@ -25,12 +26,16 @@ module.exports = class APP {
     static depositar(email, valor) {
         const usuario = APP.verificar_user_existente(email);
         if (usuario) {
-            const conta = new Account(usuario);
             const deposito = new Deposit(valor);
-            conta.depositar_conta(deposito);
+            usuario.depositar_conta(deposito);
             return `Depósito de ${valor} realizado com sucesso`;
         }
         return `Usuário não encontrado`;
+    }
+
+    static obter_saldo(email){
+        const conta = new Account(email);
+        console.log(conta.obter_saldo())
     }
 
     static transferir(usuario_envia, usuario_recebe, valor) {
@@ -38,8 +43,9 @@ module.exports = class APP {
         const destinatario = APP.verificar_user_existente(usuario_recebe);
 
         if (remetente && destinatario) {
-            remetente.Account.sacar(valor);
-            destinatario.Account.depositar(valor);
+            const nova_transferencia = new Transfer(usuario_envia, usuario_recebe, valor)
+            remetente.User.sacar(nova_transferencia);
+            destinatario.User.depositar(nova_transferencia);
             return `Transferência de ${valor} realizada com sucesso`;
         }
         return `Usuários não encontrados`;
@@ -48,8 +54,9 @@ module.exports = class APP {
     static emprestar(valor, email, numero_parcelas) {
         const usuario = APP.verificar_user_existente(email);
         if (usuario) {
+            const conta = new Account(email)
             const emprestimo = new Loan(valor, numero_parcelas);
-            usuario.Account.adicionarEmprestimo(emprestimo);
+            conta.emprestimo_conta(emprestimo);
             return `Empréstimo de ${valor} realizado com sucesso`;
         }
         return `Usuário não encontrado`;

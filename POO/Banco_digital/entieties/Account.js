@@ -8,7 +8,7 @@ module.exports = class Account{
         this.transferencias_totais = []
     }
 
-    get obter_saldo(){
+    obter_saldo(){
         return this.#saldo
     }
 
