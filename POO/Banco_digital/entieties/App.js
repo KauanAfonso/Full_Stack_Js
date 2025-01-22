@@ -54,9 +54,8 @@ module.exports = class APP {
     static emprestar(valor, email, numero_parcelas) {
         const usuario = APP.verificar_user_existente(email);
         if (usuario) {
-            const conta = new Account(email)
             const emprestimo = new Loan(valor, numero_parcelas);
-            conta.emprestimo_conta(emprestimo);
+            usuario.emprestimo_conta(emprestimo);
             return `Empréstimo de ${valor} realizado com sucesso`;
         }
         return `Usuário não encontrado`;
