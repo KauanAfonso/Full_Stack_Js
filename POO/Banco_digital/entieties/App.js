@@ -34,8 +34,11 @@ module.exports = class APP {
     }
 
     static obter_saldo(email){
-        const conta = new Account(email);
-        console.log(conta.obter_saldo())
+        const usuario = APP.verificar_user_existente(email);
+        if(usuario){
+            console.log(usuario.conta.obter_saldo())
+        }
+
     }
 
     static transferir(usuario_envia, usuario_recebe, valor) {
