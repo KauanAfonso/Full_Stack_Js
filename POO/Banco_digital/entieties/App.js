@@ -65,7 +65,7 @@ module.exports = class APP {
     }
 
     static alterar_taxa_emprestimo(porcentagem) {
-        Loan.definirTaxaJuros(porcentagem);
+        Loan.definir_juros(porcentagem);
         return `Taxa de empréstimo alterada para ${porcentagem}%`;
     }
 };
