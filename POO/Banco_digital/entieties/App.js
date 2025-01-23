@@ -27,7 +27,7 @@ module.exports = class APP {
         const usuario = APP.verificar_user_existente(email);
         if (usuario) {
             const deposito = new Deposit(valor);
-            usuario.depositar_conta(deposito);
+            usuario.conta.depositar_conta(deposito);
             return `Depósito de ${valor} realizado com sucesso`;
         }
         return `Usuário não encontrado`;
@@ -44,8 +44,8 @@ module.exports = class APP {
 
         if (remetente && destinatario) {
             const nova_transferencia = new Transfer(usuario_envia, usuario_recebe, valor)
-            remetente.User.sacar(nova_transferencia);
-            destinatario.User.depositar(nova_transferencia);
+            remetente.conta.sacar(nova_transferencia);
+            destinatario.conta.depositar(nova_transferencia);
             return `Transferência de ${valor} realizada com sucesso`;
         }
         return `Usuários não encontrados`;
@@ -55,7 +55,7 @@ module.exports = class APP {
         const usuario = APP.verificar_user_existente(email);
         if (usuario) {
             const emprestimo = new Loan(valor, numero_parcelas);
-            usuario.emprestimo_conta(emprestimo);
+            usuario.conta.emprestimo_conta(emprestimo);
             return `Empréstimo de ${valor} realizado com sucesso`;
         }
         return `Usuário não encontrado`;
