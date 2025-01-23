@@ -68,4 +68,8 @@ module.exports = class APP {
         Loan.definir_juros(porcentagem);
         return `Taxa de empréstimo alterada para ${porcentagem}%`;
     }
+
+    get obter_usuarios(){
+        console.log(APP.#usuarios)
+    }
 };
