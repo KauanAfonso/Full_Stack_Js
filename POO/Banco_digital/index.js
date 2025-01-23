@@ -11,4 +11,5 @@ kauan.depositar("kauanafon3@gmail.com", 300)
 kauan.emprestar(200, "kauanafon3@gmail.com" , 2)
 kauan.obter_saldo("kauanafon3@gmail.com") //erro 
 
-// kauan.transferir("kauanafon3@gmail.com" , "Crisnelly@123" ,500)
+console.log(kauan.transferir("kauanafon3@gmail.com" , "Crisnelly@123" ,500))
+cris.obter_saldo("Crisnelly@123") //erro 

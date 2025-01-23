@@ -47,8 +47,8 @@ module.exports = class APP {
 
         if (remetente && destinatario) {
             const nova_transferencia = new Transfer(usuario_envia, usuario_recebe, valor)
-            remetente.conta.sacar(nova_transferencia);
-            destinatario.conta.depositar(nova_transferencia);
+            remetente.conta.trasnferencias_conta(nova_transferencia);
+            destinatario.conta.depositar_conta(nova_transferencia);
             return `Transferência de ${valor} realizada com sucesso`;
         }
         return `Usuários não encontrados`;
