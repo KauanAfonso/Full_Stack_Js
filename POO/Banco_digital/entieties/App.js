@@ -69,7 +69,7 @@ module.exports = class APP {
         return `Taxa de empréstimo alterada para ${porcentagem}%`;
     }
 
-    get obter_usuarios(){
+    static obter_usuarios(){
         console.log(APP.#usuarios)
     }
 };
