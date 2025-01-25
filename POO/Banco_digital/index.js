@@ -9,9 +9,9 @@ console.log(kauan.depositar("kauanafon3@gmail.com", 5000))
 
 kauan.depositar("kauanafon3@gmail.com", 300)
 kauan.emprestar(200, "kauanafon3@gmail.com" , 2)
-kauan.obter_saldo("kauanafon3@gmail.com") //erro 
+kauan.obter_saldo("kauanafon3@gmail.com") 
 
 console.log(kauan.transferir("kauanafon3@gmail.com" , "Crisnelly@123" ,500))
-cris.obter_saldo("Crisnelly@123") //erro 
+cris.obter_saldo("Crisnelly@123")
 console.log(kauan.alterar_taxa_emprestimo(15))
 kauan.obter_usuarios()
