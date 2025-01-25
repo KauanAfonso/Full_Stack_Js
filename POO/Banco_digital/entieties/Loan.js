@@ -17,7 +17,7 @@ module.exports = class Loan{
         return Loan.#juros
     }
 
-    static set definir_juros(porcentagem){
+    static definir_juros(porcentagem){
 
         let aumento = (Loan.#juros * porcentagem) / 100
         return Loan.#juros += aumento

@@ -13,5 +13,5 @@ kauan.obter_saldo("kauanafon3@gmail.com") //erro
 
 console.log(kauan.transferir("kauanafon3@gmail.com" , "Crisnelly@123" ,500))
 cris.obter_saldo("Crisnelly@123") //erro 
-// kauan.alterar_taxa_emprestimo(15)
+console.log(kauan.alterar_taxa_emprestimo(15))
 kauan.obter_usuarios()

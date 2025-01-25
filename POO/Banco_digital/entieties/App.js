@@ -65,8 +65,8 @@ module.exports = class APP {
     }
 
     static alterar_taxa_emprestimo(porcentagem) {
-        Loan.definir_juros(porcentagem);
-        return `Taxa de empréstimo alterada para ${porcentagem}%`;
+        const preco_atual = Loan.definir_juros(porcentagem);
+        return `Taxa de empréstimo alterada para ${porcentagem}% valor atual de ${preco_atual}`;
     }
 
     static obter_usuarios(){
