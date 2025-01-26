@@ -16,8 +16,7 @@ module.exports = class APP {
         if (usuario_existe) {
             return `Usuário já existente`;
         } else {
-            const conta = new Account(email);
-            const usuario = new User(nome_completo, email, conta);
+            const usuario = new User(nome_completo, email);
             APP.#usuarios.push(usuario);
             return `Usuário criado com sucesso`;
         }
@@ -44,15 +43,20 @@ module.exports = class APP {
     static transferir(usuario_envia, usuario_recebe, valor) {
         const remetente = APP.verificar_user_existente(usuario_envia);
         const destinatario = APP.verificar_user_existente(usuario_recebe);
-
+    
         if (remetente && destinatario) {
-            const nova_transferencia = new Transfer(usuario_envia, usuario_recebe, valor)
+            if (remetente.conta.obter_saldo() < valor) {
+                return `Saldo insuficiente para realizar a transferência`;
+            }
+    
+            const nova_transferencia = new Transfer(remetente, destinatario, valor);
             remetente.conta.trasnferencias_conta(nova_transferencia);
-            destinatario.conta.depositar_conta(nova_transferencia);
+            destinatario.conta.trasnferencias_conta(nova_transferencia);
             return `Transferência de ${valor} realizada com sucesso`;
         }
         return `Usuários não encontrados`;
     }
+    
 
     static emprestar(valor, email, numero_parcelas) {
         const usuario = APP.verificar_user_existente(email);
