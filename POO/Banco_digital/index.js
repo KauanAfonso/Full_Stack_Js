@@ -29,4 +29,4 @@ console.log(kauan.alterar_taxa_emprestimo(15))
 
 
 
-console.log(kauan.obter_usuarios()) //unico erro
+kauan.obter_usuarios()
