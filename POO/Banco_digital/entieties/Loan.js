@@ -4,12 +4,12 @@ module.exports = class Loan{
   
     static #juros = 10
 
-    constructor(valor){
+    constructor(valor,installments){
         this.valor = valor
         this.installments = []
         this.data = new Date()
-        for (let i = 1; i <= this.installments; i++) {
-            this.installments.push(new Installment((value * Loan.#juros) / installments, i))
+        for (let i = 1; i <= installments; i++) {
+            this.installments.push(new Installment((valor * Loan.#juros) / installments, i))
           }
     }
 

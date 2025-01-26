@@ -20,7 +20,6 @@ module.exports = class Account{
     }
 
 
-
     emprestimo_conta(emprestimo){
         this.#saldo += emprestimo
         this.emprestimos_totais.push(emprestimo)
