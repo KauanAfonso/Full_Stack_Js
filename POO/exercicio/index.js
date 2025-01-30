@@ -1,0 +1,5 @@
+class hotel{
+    constructor(this, ){
+
+    }
+}
