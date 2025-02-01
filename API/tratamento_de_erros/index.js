@@ -13,7 +13,7 @@ function sum(a, b) {
 try {
     console.log(sum(2, 9))
     console.log(sum(true, 14))
-    console.log(sum(undefined, 22))
+    // console.log(sum(undefined, 22))
     console.log(sum(18, "0"))
 
 }catch(erro){
