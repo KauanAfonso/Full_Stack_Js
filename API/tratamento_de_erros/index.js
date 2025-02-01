@@ -22,4 +22,5 @@ try {
     console.log(error.menssage)
 }finally{
     console.log("codigo finalizado")
+    
 }
