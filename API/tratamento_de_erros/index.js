@@ -1,4 +1,3 @@
-
 function sum(a, b) {
     const firstNumber = Number(a)
     const secondNumber = Number(b)
@@ -14,12 +13,9 @@ try {
     console.log(sum(2, 9))
     console.log(sum(true, 14))
     // console.log(sum(undefined, 22))
-    
     console.log(sum(18, "0"))
-
 }catch(erro){
     console.log("Erro: ", erro)
 }finally{
-    console.log("Finalizado")
+    console.log("Finalizado")  // Mantive esta linha
 }
-
