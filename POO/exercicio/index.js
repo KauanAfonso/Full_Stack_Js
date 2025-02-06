@@ -9,4 +9,4 @@ class Hotel{
 }
 
 
-let hotel = new Hotel
+let hotel = new Hotel()
