@@ -1,0 +1,170 @@
+regualar expressions 101
+
+===========================================
+MINI DOCUMENTAÇÃO SOBRE EXPRESSÕES REGULARES
+
+O que são Expressões Regulares?
+
+Expressões regulares (regex) são padrões utilizados para buscar e manipular texto de forma eficiente.
+
+Caracteres Especiais:
+
+.  -> Qualquer caractere (exceto nova linha)
+^  -> Início da string
+$  -> Fim da string
+
+-> Zero ou mais ocorrências do elemento anterior
+
+-> Uma ou mais ocorrências do elemento anterior
+?  -> Zero ou uma ocorrência do elemento anterior
+|  -> Operador OU (alternância)
+() -> Agrupamento
+[] -> Classe de caracteres
+{} -> Quantificador de ocorrências
+\  -> Escape para caracteres especiais
+
+Classes de Caracteres:
+
+[abc]   -> Qualquer caractere 'a', 'b' ou 'c'
+[^abc]  -> Qualquer caractere, exceto 'a', 'b' ou 'c'
+[a-z]   -> Qualquer letra minúscula de 'a' a 'z'
+[A-Z]   -> Qualquer letra maiúscula de 'A' a 'Z'
+[0-9]   -> Qualquer dígito numérico
+[a-zA-Z0-9_] -> Qualquer caractere alfanumérico
+
+Metacaracteres Especiais:
+
+\d -> Qualquer dígito (0-9)
+\D -> Qualquer caractere que não seja um dígito
+\w -> Qualquer caractere alfanumérico (a-z, A-Z, 0-9, _)
+\W -> Qualquer caractere que não seja alfanumérico
+\s -> Qualquer espaço em branco (espaço, tabulação, nova linha)
+\S -> Qualquer caractere que não seja espaço em branco
+
+Quantificadores:
+
+{n}   -> Exatamente n ocorrências
+{n,}  -> Pelo menos n ocorrências
+{n,m} -> Entre n e m ocorrências
+
+Exemplos Práticos:
+
+Validar um e-mail:
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$
+
+Encontrar números em um texto:
+\d+
+
+Validar um número de telefone no formato (XX) XXXXX-XXXX:
+ \d{5}-\d{4}
+
+Substituir espaços por hífen em um texto:
+\s+  (para encontrar espaços)
+Substituir por '-'
+
+Como Usar em Python:
+
+import re
+
+texto = "Meu e-mail é exemplo@email.com"
+padrao = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+
+resultado = re.search(padrao, texto)
+if resultado:
+    print("E-mail encontrado:", resultado.group())
+
+===========================================
+
+
+
+Aqui está uma lista explicando os principais metacaracteres e classes de caracteres das expressões regulares:
+
+---
+
+### **Metacaracteres e Classes de Caracteres**
+
+#### **1. `^` (Circunflexo)**
+   - **Significado:** Indica o início da string.
+   - **Exemplo:** `^Hello` → Casa strings que começam com "Hello".
+   - **Uso alternativo:** Dentro de `[]`, significa **negação**.
+     - Exemplo: `[^0-9]` → Casa qualquer caractere que **não** seja um número.
+
+#### **2. `$` (Cifrão)**
+   - **Significado:** Indica o fim da string.
+   - **Exemplo:** `end$` → Casa strings que terminam com "end".
+
+#### **3. `.` (Ponto)**
+   - **Significado:** Representa qualquer caractere (exceto nova linha).
+   - **Exemplo:** `c.t` → Casa "cat", "cut", "cot", etc.
+
+#### **4. `\` (Barra invertida)**
+   - **Significado:** Escape para caracteres especiais.
+   - **Exemplo:** `\.` → Casa um ponto literal `.` (sem escape, o `.` casa qualquer caractere).
+   - **Outro uso:** Ativa classes de caracteres especiais (como `\w`, `\d`, etc.).
+
+#### **5. `\w` (Caractere alfanumérico)**
+   - **Significado:** Casa qualquer letra, número ou sublinhado `_`.
+   - **Equivalente a:** `[a-zA-Z0-9_]`
+   - **Exemplo:** `\w+` → Casa palavras como "hello_123".
+
+#### **6. `\W` (Não alfanumérico)**
+   - **Significado:** Casa qualquer caractere **que não seja alfanumérico**.
+   - **Equivalente a:** `[^a-zA-Z0-9_]`
+   - **Exemplo:** `\W+` → Casa símbolos como `@#$%!`.
+
+#### **7. `\d` (Dígito)**
+   - **Significado:** Casa qualquer número (`0-9`).
+   - **Equivalente a:** `[0-9]`
+   - **Exemplo:** `\d+` → Casa "123", "456", etc.
+
+#### **8. `\D` (Não dígito)**
+   - **Significado:** Casa qualquer caractere **que não seja um número**.
+   - **Equivalente a:** `[^0-9]`
+   - **Exemplo:** `\D+` → Casa "abc", "hello!", etc.
+
+#### **9. `\s` (Espaço em branco)**
+   - **Significado:** Casa espaços, tabulações e quebras de linha.
+   - **Exemplo:** `\s+` → Casa espaços múltiplos.
+
+#### **10. `\S` (Não espaço em branco)**
+   - **Significado:** Casa qualquer caractere **que não seja espaço**.
+   - **Exemplo:** `\S+` → Casa palavras sem espaços.
+
+#### **11. `*` (Zero ou mais repetições)**
+   - **Significado:** Casa **zero ou mais** ocorrências do elemento anterior.
+   - **Exemplo:** `a*` → Casa "", "a", "aaaa", etc.
+
+#### **12. `+` (Uma ou mais repetições)**
+   - **Significado:** Casa **uma ou mais** ocorrências do elemento anterior.
+   - **Exemplo:** `a+` → Casa "a", "aaaa", mas não "".
+
+#### **13. `?` (Zero ou uma ocorrência)**
+   - **Significado:** Torna o elemento anterior opcional.
+   - **Exemplo:** `colou?r` → Casa "color" e "colour".
+
+#### **14. `{n}` (Repetição exata)**
+   - **Significado:** Casa exatamente `n` ocorrências do elemento anterior.
+   - **Exemplo:** `a{3}` → Casa "aaa", mas não "aa".
+
+#### **15. `{n,}` (Mínimo `n` repetições)**
+   - **Significado:** Casa `n` ou mais ocorrências.
+   - **Exemplo:** `a{2,}` → Casa "aa", "aaa", "aaaa", etc.
+
+#### **16. `{n,m}` (Entre `n` e `m` repetições)**
+   - **Significado:** Casa pelo menos `n` e no máximo `m` ocorrências.
+   - **Exemplo:** `a{2,4}` → Casa "aa", "aaa", "aaaa", mas não "a" ou "aaaaa".
+
+#### **17. `|` (OU lógico)**
+   - **Significado:** Alternância (um ou outro).
+   - **Exemplo:** `apple|banana` → Casa "apple" ou "banana".
+
+#### **18. `()` (Agrupamento)**
+   - **Significado:** Agrupa expressões para aplicar operadores a elas.
+   - **Exemplo:** `(ab)+` → Casa "ab", "abab", "ababab", etc.
+
+#### **19. `[]` (Classe de caracteres)**
+   - **Significado:** Define um conjunto de caracteres aceitáveis.
+   - **Exemplo:** `[aeiou]` → Casa qualquer vogal.
+   - **Exemplo de intervalo:** `[a-zA-Z]` → Casa qualquer letra.
+
+---
