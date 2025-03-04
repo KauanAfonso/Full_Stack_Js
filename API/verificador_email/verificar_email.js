@@ -9,10 +9,12 @@
 */
 
 const verificar_email = (email)=>{
-    const emailfixado = email.replace()
-    console.log(emailfixado)
+    const emailfixado = email.replace(/\s/g, '');
+    return emailfixado
 }
 
 const verificador_senha = () =>{
 
 }
+
+console.log(verificar_email('kauana afonso da silva'))
