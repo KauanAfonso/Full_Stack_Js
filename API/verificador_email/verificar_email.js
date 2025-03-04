@@ -10,6 +10,8 @@
 
 const verificar_email = (email)=>{
     const emailfixado = email.replace(/\s/g, '');
+    const email_arroba = emailfixado.match(/[/@]/)
+    console.log(email_arroba)
     return emailfixado
 }
 
