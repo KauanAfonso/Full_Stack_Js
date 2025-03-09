@@ -15,7 +15,7 @@ const verificar_email = (email)=>{
     return emailfixado
 }
 
-const verificador_senha = () =>{
+const verificador_senha = (senha) =>{
 
 }
 
