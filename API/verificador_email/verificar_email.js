@@ -16,7 +16,7 @@ const verificar_email = (email)=>{
 }
 
 const verificador_senha = (senha) =>{
-
+    return senha
 }
 
 console.log(verificar_email('kauana afonso da silva'))
