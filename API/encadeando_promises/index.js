@@ -21,7 +21,7 @@ function getAge(birthday) {
 }
 
 //chamou a fun e passou a idade para a outra func
-getAge('2009-09-02').then((age)=>checkAge(age))//return passa adiante )
+getAge('2009-09-02').then((age)=>checkAge(age))h//return passa adiante )
 .then((isOver18) =>{
     if(isOver18){
         console.log("è maior de idade")
