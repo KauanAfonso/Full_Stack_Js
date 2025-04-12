@@ -1,0 +1,32 @@
+{
+  "transaction": [
+    {
+      "id": "1",
+      "name": "Compra shoppe",
+      "value": 100
+    },
+    {
+      "id": "2",
+      "name": "Compra Shein",
+      "value": 200
+    },
+    {
+      "id": "66e9"
+    },
+    {
+      "id": "7b6e",
+      "name": "Netflix",
+      "value": "50"
+    },
+    {
+      "id": "a402",
+      "name": "Netflix",
+      "value": "50"
+    }
+  ],
+  "value_totaly": [
+    {
+      "totally": 900
+    }
+  ]
+}
