@@ -47,6 +47,7 @@ const form = document.getElementById('form')
         })
 
         const responseData = await response.json()
+        form.reset()
         getTransactions('http://localhost:3000/transaction')
     
     })
