@@ -33,6 +33,8 @@ function renderTransactions(data){
 
     div_main.append(label, input_id, name_transaction,label2, value_transaction,btn_delete)
     document.getElementById('transactions').append(div_main)
+
+    btn_delete.addEventListener('click',()=>delete_transaction(`http://localhost:3000/transaction/${data.id}`))
 }
 
 
@@ -70,3 +72,15 @@ const form = document.getElementById('form')
     
     })
 
+
+async function delete_transaction(url){
+        const response = await fetch(url,{
+            method:'DELETE',
+            headers:{
+                "Content-type": "application/json"
+            },
+        });
+
+        alert('DELETADO COM SUCESSO')
+        getTransactions('http://localhost:3000/transaction')
+}
