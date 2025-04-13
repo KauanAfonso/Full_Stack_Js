@@ -10,7 +10,7 @@ ideia -> crie um ink na renderização para air para o endpoint diretor atraves 
 
 function renderTransactions(data){
     const div_main = document.createElement('div')
-
+    div_main.classList = "card";
 
     const name_transaction = document.createElement('h4');
     name_transaction.textContent = `Nome da transação: ${data.name}`;
@@ -35,7 +35,7 @@ function renderTransactions(data){
     btn_update.setAttribute('data-bs-toggle', 'modal')
     btn_update.setAttribute
     ('data-bs-target', '#staticBackdrop')
-    btn_update.classList = "btn btn-primary"
+    btn_update.classList = "btn btn-dark"
     btn_update.textContent = "Update"
 
     div_main.append(input_id, name_transaction, value_transaction,btn_update ,btn_delete)
