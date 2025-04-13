@@ -27,11 +27,17 @@
       "id": "bc0b",
       "name": "kauan",
       "value": "789"
+    },
+    {
+      "id": "6963",
+      "name": "",
+      "value": ""
     }
   ],
   "value_totaly": [
     {
-      "totally": 900
+      "totally": 900,
+      "id": "55ed"
     }
   ]
 }

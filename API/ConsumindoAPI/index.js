@@ -1,5 +1,13 @@
 
 
+/*
+
+ideia -> crie um ink na renderização para air para o endpoint diretor atraves de um link ou button
+
+
+*/
+
+
 function renderTransactions(data){
     const div_main = document.createElement('div')
 
@@ -8,12 +16,22 @@ function renderTransactions(data){
     const name_transaction = document.createElement('h4');
     name_transaction.textContent = data.name;
 
+    const input_id = document.createElement('input');
+    input_id.setAttribute('type','hidden');
+    input_id.value = data.id;
+    input_id.id = `transaction ${data.id}`
+
+
     const label2 = document.createElement('label')
     label2.textContent = "value: "
     const value_transaction = document.createElement('p');
     value_transaction.textContent = data.value;
 
-    div_main.append(label, name_transaction,label2, value_transaction)
+    const btn_delete = document.createElement('button')
+    btn_delete.textContent = "Excluir";
+    btn_delete.id = `Excluir ${data.id}`
+
+    div_main.append(label, input_id, name_transaction,label2, value_transaction,btn_delete)
     document.getElementById('transactions').append(div_main)
 }
 
