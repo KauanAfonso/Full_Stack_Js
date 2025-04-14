@@ -10,6 +10,10 @@ body {
     font-weight: bold;
     color: white;
   }
+
+  #titulo{
+    color: #002d40;
+  }
   
   .container-dashboard {
     display: flex;

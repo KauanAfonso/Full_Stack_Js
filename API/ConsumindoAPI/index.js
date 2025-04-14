@@ -20,7 +20,8 @@ function renderTransactions(data){
     input_id.value = data.id;
     input_id.id = `transaction ${data.id}`
 
-
+    const type = document.createElement('h5')
+    type.textContent = `Transaction's type: ${data.type_t}`
 
     const value_transaction = document.createElement('p');
     value_transaction.textContent = `Value: ${data.value}`;
@@ -38,7 +39,7 @@ function renderTransactions(data){
     btn_update.classList = "btn btn-dark"
     btn_update.textContent = "Update"
 
-    div_main.append(input_id, name_transaction, value_transaction,btn_update ,btn_delete)
+    div_main.append(input_id, name_transaction, type, value_transaction,btn_update ,btn_delete)
     document.getElementById('transactions').append(div_main)
     
     const url = `http://localhost:3000/transaction/${data.id}`
@@ -59,6 +60,33 @@ async function getTransactions(url) {
 getTransactions('http://localhost:3000/transaction')
 
 
+async function getTotal() {
+    
+    let total = 0
+    const response = await fetch('http://localhost:3000/transaction')
+    data = await response.json();
+    try{
+    total = data.reduce((value,element)=>{
+        if(element.type_t == "Entry"){
+            return value+=parseFloat(element.value)
+        }else{
+            return value-=parseFloat(element.value)
+        }
+    },0)
+    }catch(Exeption){
+        console.log('erro' +Exeption)
+    }
+
+    return total
+}   
+async function renderTotal() {
+    const getTotalFunction = await getTotal()
+    document.getElementById('total_value').textContent = `R$ ${getTotalFunction}`
+   
+}
+
+renderTotal()
+
 const form = document.getElementById('form')
   
     form.addEventListener('submit',  async(ev)=>{
@@ -67,6 +95,7 @@ const form = document.getElementById('form')
         const data = {
             name:document.getElementById('name').value,
             value:document.getElementById('value').value,
+            type_t:document.getElementById('entry_exit_update').value
         }
 
         const response = await fetch('http://localhost:3000/transaction', {
@@ -90,6 +119,7 @@ async function update_transaction(url) {
     const info = {
         name:document.getElementById('name_update').value,
         value:document.getElementById('value_update').value,
+        type_t:document.getElementById('entry_exit').value
     }
 
     const response = await fetch(url,{
@@ -112,6 +142,7 @@ const form_uptade = (url, info) =>{
    
     document.getElementById('name_update').value = info.name,
     document.getElementById('value_update').value = info.value,
+    document.getElementById('entry_exit').value = info.value
     
     
     form.addEventListener('submit', (ev)=>{
@@ -133,3 +164,5 @@ async function delete_transaction(url){
         alert('DELETADO COM SUCESSO')
         location.reload()       
 }
+
+
