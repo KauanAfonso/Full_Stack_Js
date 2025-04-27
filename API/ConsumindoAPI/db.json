@@ -1,15 +1,22 @@
 {
   "transaction": [
     {
-      "id": "a120",
-      "name": "Mathues",
-      "value": "400",
-      "type_t": "Exit"
+      "name": "crisss",
+      "value": "845",
+      "type_t": "Left",
+      "id": "e97f"
+    },
+    {
+      "id": "3bb0",
+      "name": "Netflix",
+      "value": "150",
+      "type_t": "Entry"
     }
   ],
   "value_totaly": [
     {
-      "totally": 900
+      "totally": 900,
+      "id": "9630"
     }
   ]
 }
