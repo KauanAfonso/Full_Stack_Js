@@ -1,22 +1,36 @@
 {
   "transaction": [
     {
-      "name": "crisss",
-      "value": "845",
-      "type_t": "Left",
-      "id": "e97f"
+      "id": "dd42",
+      "name": "Compra shoope",
+      "value": "600",
+      "type_t": "Entry"
     },
     {
-      "id": "3bb0",
-      "name": "Netflix",
-      "value": "150",
+      "name": "aaaa",
+      "value": "1000",
+      "type_t": "Left",
+      "id": "54e2"
+    },
+    {
+      "id": "6b54",
+      "name": "Compra shoope",
+      "value": "789",
       "type_t": "Entry"
+    },
+    {
+      "id": "d4c4",
+      "name": "Mercado",
+      "value": "156.12",
+      "type_t": "Exit"
     }
   ],
   "value_totaly": [
     {
       "totally": 900,
+
       "id": "9630"
+
     }
   ]
 }

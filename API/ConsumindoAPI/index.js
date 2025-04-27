@@ -6,6 +6,7 @@ function renderTransaction(transaction) {
     const name = document.createElement('h4');
     name.textContent = `Nome da transação: ${transaction.name}`;
 
+
     const hiddenId = document.createElement('input');
     hiddenId.type = 'hidden';
     hiddenId.value = transaction.id;
@@ -32,6 +33,7 @@ function renderTransaction(transaction) {
     card.append(hiddenId, name, type, value, updateBtn, deleteBtn);
     document.getElementById('transactions').append(card);
 
+
     const url = `http://localhost:3000/transaction/${transaction.id}`;
 
     // Adiciona os eventos
@@ -50,6 +52,15 @@ async function fetchAndRenderTransactions(url) {
     } catch (error) {
         console.error('Erro ao buscar transações:', error);
     }
+
+
+    return total
+}   
+async function renderTotal() {
+    const getTotalFunction = await getTotal()
+    document.getElementById('total_value').textContent = `R$ ${getTotalFunction.toFixed(2)}`
+   
+
 }
 
 // Calcula o total de entradas e saídas
@@ -62,6 +73,7 @@ async function calculateTotal() {
             const value = parseFloat(transaction.value);
             return transaction.type_t === "Entry" ? acc + value : acc - value;
         }, 0);
+
 
         return total;
     } catch (error) {
@@ -92,7 +104,9 @@ document.getElementById('form').addEventListener('submit', async (event) => {
             headers: {
                 "Content-type": "application/json"
             },
+
             body: JSON.stringify(newTransaction)
+
         });
 
         await response.json();
