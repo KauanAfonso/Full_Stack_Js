@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "outDir": "dist", //diretorio de saida do aquivo js
+         // Vigia os arquivos typeS -> a cada mudança ele altera e compila automaticamente
+    }
+}

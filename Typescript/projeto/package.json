@@ -1,0 +1,19 @@
+{
+  "name": "projeto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc --watch", //fazendo com que o type identifique mudanças e recompile -> npm run watch
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "projeto": "file:"
+  }
+}
