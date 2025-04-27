@@ -1,0 +1,8 @@
+
+//congigurar o typescript
+{
+    "compilerOptions": {
+        "outFile": "main.js", //mudando o nome do arquivode saida
+        "target": "ESNext", //mudando o tipo de saida do codigo js para a mais atual (o padrao é es3)
+    }
+}
