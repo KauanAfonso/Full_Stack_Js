@@ -1,0 +1,7 @@
+
+//congigurar o typescript
+{
+    "compilerOptions": {
+        "target": "ESNext", //mudando o tipo de saida do codigo js para a mais atual (o padrao é es3)
+    }
+}
